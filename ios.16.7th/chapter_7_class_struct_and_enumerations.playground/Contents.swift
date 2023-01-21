@@ -57,3 +57,66 @@ let cat1 = Mammal(name: "Cat1", sound: "Sound1", numberOfLegs: 4, breathesOxygen
 print(cat1.name)
 print(cat1.hasFurOrHair)
 print(cat1.description())
+
+//Struct
+struct Reptile {
+    var name: String
+    var sound: String
+    var numberOfLegs: Int
+    var breathesOxygen: Bool
+    var hasFurOrHair: Bool
+    
+    func makeSound() {
+        print(self.sound)
+    }
+    
+    func description() -> String {
+        return "Structure: Reptile name: \(self.name) sound: \(self.sound) numberOfLegs: \(numberOfLegs) breathesOxygen: \(breathesOxygen) hasFurOrHair: \(self.hasFurOrHair)"
+    }
+}
+
+var snake = Reptile(name: "Snake", sound: "Hiss", numberOfLegs: 0, breathesOxygen: true, hasFurOrHair: false)
+print(snake.description())
+print(snake.makeSound())
+
+//Comparing value types and reference types
+struct SampleValueType {
+    var sampleProperty = 10
+}
+
+var a = SampleValueType()
+var b = a
+b.sampleProperty = 11
+print(a.sampleProperty)
+print(b.sampleProperty)
+
+class SampleReferenceType {
+    var sampleProperty = 10
+}
+
+var c = SampleReferenceType()
+var d = c
+c.sampleProperty = 43
+print(c.sampleProperty)
+print(d.sampleProperty)
+
+//Enumeration
+enum TrafficLightColor {
+    case red
+    case yellow
+    case green
+    
+    func description() -> String {
+        switch self {
+        case .red:
+            return "red"
+        case .yellow:
+            return "yellow"
+        case .green:
+            return "green"
+        }
+    }
+}
+
+var trafficLightColor = TrafficLightColor.red
+print(trafficLightColor.description())
