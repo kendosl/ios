@@ -70,3 +70,25 @@ func oddNumber(number: Int) -> Bool {
 
 let numberList = [2, 4, 6, 7]
 print(isThereAMatch(listOfNumbers: numberList, condition: oddNumber))
+
+func buySomething(itemValueEntered itemValueField: String, cardBalance: Int) -> Int {
+    guard let itemValue = Int(itemValueField) else {
+        print("Error in item value")
+        return cardBalance
+    }
+    
+    let remainingBalance = cardBalance - itemValue
+    return remainingBalance
+}
+
+print(buySomething(itemValueEntered: "10", cardBalance: 50))
+print(buySomething(itemValueEntered: "blue", cardBalance: 50))
+
+//Closures
+var numbersArray = [2, 3, 6, 7]
+let myClosure = {(number: Int) -> Int in
+    let result = number * number
+    return result
+}
+
+let mappedNumbers = numbersArray.map(myClosure)
